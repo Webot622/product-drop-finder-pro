@@ -1,9 +1,29 @@
-
 import React from 'react';
-import { AppProvider } from './context/AppContext';  // Adjust path if needed, probably ./context/AppContext
+import { AppProvider } from './context/AppContext';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
-import Dashboard from './components/Dashboard';  // or whatever default
+import Dashboard from './components/Dashboard';
+import Discover from './components/Discover';
+import Tools from './components/Tools';
+import Upgrade from './components/Upgrade';
+import { useApp } from './context/AppContext';
+
+function MainContent() {
+  const { activeTab } = useApp();
+
+  switch (activeTab) {
+    case 'dashboard':
+      return <Dashboard />;
+    case 'discover':
+      return <Discover />;
+    case 'tools':
+      return <Tools />;
+    case 'upgrade':
+      return <Upgrade />;
+    default:
+      return <Dashboard />;
+  }
+}
 
 function App() {
   return (
@@ -12,8 +32,8 @@ function App() {
         <Header />
         <div className="flex">
           <Sidebar />
-          <main className="flex-1 pt-20 md:ml-64 p-6">
-            <Dashboard />  {/* or a router/switch for activeTab */}
+          <main className="flex-1 pt-20 md:ml-64 p-6 overflow-auto">
+            <MainContent />
           </main>
         </div>
       </div>
