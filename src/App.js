@@ -1,20 +1,11 @@
-import React from "react";
-
 function App() {
   return (
-    <div
-      style={{
-        padding: "30px",
-        textAlign: "center",
-        fontSize: "24px",
-        color: "#333",
-      }}
-    >
-      <h1>Product Drop Finder Pro</h1>
-      <p>Your app is now loading correctly on Vercel!</p>
-      <p>This confirms deployment is working.</p>
+    <div style={{ padding: "40px", textAlign: "center", fontSize: "24px", color: "#222" }}>
+      <h1>🚀 Product Drop Finder Pro is Live!</h1>
+      <p>If you can see this, your app is working on Vercel!</p>
     </div>
   );
 }
 
 export default App;
+
